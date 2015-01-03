@@ -22,10 +22,10 @@ class Category_model extends CI_Model {
     
     function add_category($id = NULL) {
         if(empty($id)){
-            $this->db->insert($this->_table, array('name' => $this->input->post('title')));
+            $this->db->insert($this->_table, array('title' => $this->input->post('title')));
         }else{
             $this->db->where($this->primary_key, $id);
-            $this->db->update($this->_table, array('name' => $this->input->post('title')));
+            $this->db->update($this->_table, array('title' => $this->input->post('title')));
         }
         return true;
     }

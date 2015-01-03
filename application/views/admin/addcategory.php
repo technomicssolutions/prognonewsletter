@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta content='no' name='apple-mobile-web-app-capable'>
     <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no" />
-    <title>Progno Newsletter </title>
+    <title>Smart Savings </title>
     <link rel="shortcut icon" href="<?php echo $base_url; ?>assets/img/favicon.png">
     
     <!--[if lt IE 9]>
