@@ -62,6 +62,9 @@
   <?php } ?>
   </tbody>                 
 </table>
+<div class="col-lg-12">
+ <?php  echo $this->pagination->create_links(); ?>
+</div>
 <div>
 </div>      
 </div>

@@ -14,9 +14,10 @@ class Contact_model extends CI_Model {
        
     }
 
-    function list_contact() {        
+    function list_contact($num = NULL, $offset = NULL) {
+    	        
         $this->db->join($this->_join_table, $this->_join_table.'.'.$this->primary_key.'='.$this->_table.'.'.$this->foreign_key);
-        $query = $this->db->get($this->_table);
+        $query = $this->db->get($this->_table,$num,$offset);
         return $query->result();
     }
     
@@ -36,6 +37,13 @@ class Contact_model extends CI_Model {
     }
     function get_contact($id = NULL){
         $this->db->where($this->primary_key,$id);
+        $query = $this->db->get($this->_table);
+        return $query->result();
+    }
+    function search_contact($search = NULL){
+        $this->db->like('email',$search,'after');
+        $this->db->or_like('name', $search,'after');  
+        $this->db->join($this->_join_table, $this->_join_table.'.'.$this->primary_key.'='.$this->_table.'.'.$this->foreign_key);
         $query = $this->db->get($this->_table);
         return $query->result();
     }

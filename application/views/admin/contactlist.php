@@ -28,12 +28,41 @@
 </div>
 <div class="col-lg-8">
 <div class="admin-cont"> 
+<div class="col-lg-10 col-xs-offset-2">
+  <?php 
+      $attributes   =   array('class' => 'form-horizontal');
+      echo form_open_multipart('',$attributes); 
+  ?>
+    <div class="form-group">
+            <div class="col-sm-5">
+                <?php 
+                    $attributes   =   array(
+                        'class' => 'form-control',
+                        'name'  => 'search',
+                        'value' =>  set_value('search',''),
+                    );
+                    echo form_input($attributes); 
+                ?>
+            </div>
+            <div class="col-sm-5">
+                <?php echo form_submit('submit', 'Search'); ?>
+            </div>
+                <?php
+                    echo form_error('name');
+                ?>
+
+    </div>
+   
+     
+    
+</div>
 <div class="col-lg-10">
 <h3 class="text-center">Contact List</h3> 
 </div>                          
 
 <div class="col-lg-10">
-<a class="btn btn-primary pull-right" href="<?php echo base_url(); ?>admin/addcategory">Add Category</a>
+<div class="col-lg-10">
+<a class="btn btn-primary pull-right" href="<?php echo base_url(); ?>admin/addcontact">Add Contact</a>
 </div>
 <div class="col-lg-10">
 <div class="clol-lg-12">
@@ -66,6 +95,9 @@
   <?php } ?>
   </tbody>                 
 </table>
+<div class="col-lg-12">
+ <?php  echo $this->pagination->create_links(); ?>
+</div>
 <div>
 								  
 								

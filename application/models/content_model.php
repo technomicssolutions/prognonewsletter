@@ -13,18 +13,18 @@ class Content_model extends CI_Model {
        
     }
 
-    function list_content() {
+    function list_content($num = NULL, $offset = NULL) {
     	    
-        $query = $this->db->get($this->_table);
+        $query = $this->db->get($this->_table,$num,$offset);
         return $query->result();
     }
     
-    function add_contact($id = NULL) {
+    function add_content($id = NULL,$image = NULL) {
     	$data  =   array(
-    		'name'     => $this->input->post('name'),
+    		'title'    => $this->input->post('name'),
     		'content'  => $this->input->post('content'),
     		'url'      => $this->input->post('url'),
-    		'image'    => $this->input->post('image'),
+    		'image'    => $image,
     	);
         if(empty($id)){
             $this->db->insert($this->_table,$data);
@@ -35,13 +35,13 @@ class Content_model extends CI_Model {
         return true;
     }
     
-    function get_contact($id = NULL){
+    function get_content($id = NULL){
         $this->db->where($this->primary_key,$id);
         $query = $this->db->get($this->_table);
         return $query->result();
     }
     
-    function deletecontact($id) {
+    function deletecontent($id) {
         $this->db->where($this->primary_key,$id);
         $query = $this->db->delete($this->_table);
       

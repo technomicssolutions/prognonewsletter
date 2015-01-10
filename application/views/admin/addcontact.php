@@ -51,11 +51,13 @@
                                               <tr>
                                                 <td align="left" valign="top" class="subrenning_font"><strong>Category</strong></td>
                                                 <td colspan="3" align="left" valign="top">
-                                                    <select name="category">
-                                                        <?php foreach($categories as $row){ ?>
-                                                            <option value="<?php echo set_value('category',$row->id); ?>" <?php if($row->id==$category){ echo 'selected';}?> ><?php echo $row->name; ?></option>
-                                                        <?php } ?>  
-                                                    </select>                       </td>
+                                                   <?php 
+        foreach($categories as $row){
+            $options[$row->id] =   $row->title;
+        }
+        echo form_dropdown('category', $options,set_value('category',$category)); 
+
+    ?>                   </td>
                                             </tr>
                                             <tr>
                                                 <td align="left" valign="top" class="subrenning_font">

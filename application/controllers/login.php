@@ -11,7 +11,7 @@ class Login extends CI_Controller {
         }
         $this->load->library('form_validation');
         $this->load->model('admin_model');
-        $this->load->helper(array('form','url'));
+        $this->load->helper('form');
         $this->form_validation->set_rules('username', 'Username', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
 

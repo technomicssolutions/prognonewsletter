@@ -14,8 +14,9 @@ class Category_model extends CI_Model {
        
     }
 
-    function list_category() {        
-        $query = $this->db->get($this->_table);
+    function list_category($num = NULL, $offset = NULL) {  
+
+        $query = $this->db->get($this->_table,$num,$offset);
         return $query->result();
     }
     
