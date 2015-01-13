@@ -6,7 +6,10 @@
 
 </head>
 
-<body style="background:#333333; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif;">
+<body style="margin:0; padding:0; font-family:Arial, Helvetica, sans-serif;">
+
+<table width="100%" bgcolor="#333333" border="0" cellspacing="0" cellpadding="0">
+<tr><td>
 <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td height="86" colspan="4" bgcolor="#FFFFFF" style="margin:0 0 0 27px;">
@@ -110,6 +113,7 @@
   </tr>
   
 </table>
-
+</td></tr>
+</table>
 </body>
 </html>
