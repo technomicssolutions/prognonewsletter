@@ -335,7 +335,8 @@ class Admin extends CI_Controller{
                 $this->email->to($value);
                 $this->email->send();
             }
-            echo $this->email->print_debugger();
+            $this->session->set_flashdata('msg',"Mail send");
+            redirect(base_url().'admin');
           
         }else{
             $data['category']   =  $this->db->get('mailing_list_category')->result();

@@ -25,7 +25,13 @@
 </div>
 </div>
 <div class="col-lg-8">
-<div class="admin-cont">                            
+<div class="admin-cont">  
+ <div class="col-sm-8">
+               <?php 
+                   echo $this->session->flashdata("msg"); 
+                   
+               ?>
+</div>                        
 <h3>Welcome to Dashboard</h3>   
   
 </div>      
