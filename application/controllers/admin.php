@@ -292,6 +292,7 @@ class Admin extends CI_Controller{
     public function sendtemplate($id = NULL){
         $data['base_url']   =  base_url();
         $this->load->helper(array('form'));
+        $data['id']         =  $id;
         if($_POST){
 
             $this->load->model(array('template_model','content_model'));
@@ -335,23 +336,7 @@ class Admin extends CI_Controller{
                 $this->email->send();
             }
             echo $this->email->print_debugger();
-            /*$apikey = '9494a392eafcc7aefde071fb1b91f52f-us9';
-            $config = array(
-                    'apikey' => $apikey,      // Insert your api key
-                    'secure' => FALSE   // Optional (defaults to FALSE)
-            );
-            $this->load->library('MCAPI', $config, 'mail_chimp');
-        
-            $message = array(
-                'html'=>'Yo, this is the <b>html</b> portion',
-                'text'=>'Yo, this is the *text* portion',
-                'subject'=>'This is the subject',
-                'from_name'=>'Me!',
-                'from_email'=>'verifed@example.com',                'to_email'=>$to_emails,
-                'to_name'=>$to_names
-            );
-            //campaignCreate($apikey, 'regular', array options, array content, array segment_opts, array type_opts)
-            */
+          
         }else{
             $data['category']   =  $this->db->get('mailing_list_category')->result();
             $this->load->view('admin/sendtemplate',$data);

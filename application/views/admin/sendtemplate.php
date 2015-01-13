@@ -33,7 +33,7 @@
 
         <?php 
             $attributes   =   array('class' => 'form-horizontal');
-            echo form_open(base_url().'admin/sendtemplate',$attributes); 
+            echo form_open(base_url().'admin/sendtemplate/'.$id,$attributes); 
             
         ?>
               
